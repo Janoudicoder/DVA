@@ -1,0 +1,39 @@
+/* Wrapper for the scrolling text */
+.text-scroll-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Container for scrolling content */
+.text-scroll-container {
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Prevent wrapping */
+    animation: scroll-text 10s linear infinite; /* Adjust speed as necessary */
+}
+
+/* Text styling */
+.text-scroll-text {
+    display: inline-block;
+    padding: 10px; /* Matching padding */
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3); /* Optional background for better visibility */
+}
+
+/* Keyframes for continuous scrolling */
+@keyframes scroll-text {
+    0% {
+        transform: translateX(0); /* Start from the left */
+    }
+    100% {
+        transform: translateX(-300%); /* Move left to the end of the first set */
+    }
+}
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+    .text-scroll-container {
+        animation: scroll-text 20s linear infinite; /* Keep the same speed */
+    }
+}
